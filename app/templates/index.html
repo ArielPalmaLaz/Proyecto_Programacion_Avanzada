@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Game Store</title>
+  </head>
+  <body>
+    <div class="container mt-5">
+       {% if current_user.is_authenticated %}
+        <h2>Welcome, {{ current_user.name }}!</h2>
+        <p>Your email: {{ current_user.email }}</p>
+        <a href="{{ url_for('auth.logout') }}" class="btn btn-danger">Logout</a>
+      {% else %}
+        <h2>Welcome to My Game Store</h2>
+        <a href="{{ url_for('auth.login') }}" class="btn btn-primary">Login</a>
+        <a href="{{ url_for('auth.register') }}" class="btn btn-secondary">Register</a>
+      {% endif %}
+    <h1>Welcome to My Game Store</h1>
+    <a href="/games">View Games</a>
+  </body>
+</html>
