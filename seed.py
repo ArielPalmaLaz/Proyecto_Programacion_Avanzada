@@ -16,8 +16,8 @@ with app.app_context():
 
     # Crear videojuegos con imagen
     game1 = Game(
-        title='Space Warriors',
-        description='Futuristic space battle game.',
+        title='Persona 5',
+        description='Estilazo.',
         price=29.99,
         release_date=date(2023, 5, 10),
         developer='NovaCorp',
@@ -35,7 +35,37 @@ with app.app_context():
         stock=30,
         image_game_url='https://image.api.playstation.com/vulcan/ap/rnd/202209/0708/kpdkl075Ikcx8C9P5Y1pBbH2.jpg'
     )
-    db.session.add_all([game1, game2])
+    game3 = Game(
+        title='Persona 3',
+        description='Simplemente persona 3',
+        price=59.99,
+        release_date=date(2024, 2, 1),
+        developer='MythosGames',
+        genre=rpg,
+        stock=30,
+        image_game_url='https://image.api.playstation.com/vulcan/ap/rnd/202307/2605/7b70e463bf05b20fbf99f8bf81956aa805969da98d9dcde8.jpg'
+    )
+    game4 = Game(
+        title='Persona4',
+        description="The best person's game",
+        price=29.99,
+        release_date=date(2024, 2, 1),
+        developer='MythosGames',
+        genre=rpg,
+        stock=30,
+        image_game_url='https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1113000/capsule_616x353.jpg?t=1704380046'
+    )
+    game5 = Game(
+        title='Naruto Ultima Ninja Stomr',
+        description='Naruto game',
+        price=35.99,
+        release_date=date(2024, 2, 1),
+        developer='MythosGames',
+        genre=rpg,
+        stock=30,
+        image_game_url='https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/349040/capsule_616x353.jpg?t=1703080866'
+    )
+    db.session.add_all([game1, game2, game3, game4, game5])
 
     # Crear usuario
     user1 = User(name='Alice Smith', email='alice@example.com', password='hashed_password')

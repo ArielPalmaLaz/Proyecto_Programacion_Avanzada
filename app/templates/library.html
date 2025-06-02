@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}My Game Library{% endblock %}
+
+{% block head %}
+  {{ super() }}
+  <link rel="stylesheet" href="{{ url_for('static', filename='library.css') }}" />
+{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+  <h2>🎮 My Game Library</h2>
+  {% if items %}
+    <ul class="list-group mt-4">
+      {% for item in items %}
+      <li class="list-group-item">
+        <div class="row align-items-center">
+          <div class="col-md-2">
+            {% if item.image_url.startswith('http') %}
+              <img src="{{ item.image_url }}" alt="{{ item.title }}">
+            {% else %}
+              <img src="{{ url_for('static', filename=item.image_url) }}" alt="{{ item.title }}">
+            {% endif %}
+          </div>
+          <div class="col-md-7", id="descripcion">
+            <strong>{{ item.title }}</strong><br>
+            <span class="purchase-date">Purchased on {{ item.purchased_at.strftime('%Y-%m-%d') }}</span>
+          </div>
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p class="mt-4">You haven't purchased any games yet.</p>
+  {% endif %}
+  <a href="{{ url_for('main.games') }}" class="btn btn-secondary mt-3">Back to Store</a>
+</div>
+{% endblock %}

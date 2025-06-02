@@ -1,0 +1,73 @@
+/* games.css */
+
+body {
+  background-color: #000; /* negro para fondo */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1 {
+  color: #343a40; /* gris oscuro */
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.card {
+  background-color: #ffffff; /* blanco para las cards */
+  border: 1px solid #dee2e6;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+  transition: box-shadow 0.3s ease, transform 0.2s ease-in-out;
+}
+
+.card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transform: translateY(-5px);
+}
+
+.card-img-top {
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+  height: 200px;
+  object-fit: cover;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.card-title {
+  font-weight: 700;
+  color: #212529; /* texto principal */
+  font-size: 1.25rem;
+}
+
+.card-text {
+  color: #6c757d; /* texto secundario */
+  font-style: italic;
+  font-size: 0.95rem;
+}
+
+.genre-list {
+  color: #495057; /* gris oscuro medio */
+  font-style: italic;
+  margin-bottom: 0.5rem;
+}
+
+.card-footer {
+  background-color: #fff;
+  border-top: none;
+  text-align: center;
+}
+
+.btn-primary {
+  background-color: #343a40; /* gris oscuro */
+  border-color: #343a40;
+  font-weight: 600;
+  padding: 8px 20px;
+  border-radius: 0.5rem;
+  transition: background-color 0.3s ease;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background-color: #495057; /* gris oscuro más claro */
+  border-color: #495057;
+  color: #fff;
+}

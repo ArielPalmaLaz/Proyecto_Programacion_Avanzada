@@ -45,6 +45,7 @@ class Purchase(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
     purchased_at = db.Column(db.DateTime, default=datetime.utcnow)
     total_amount = db.Column(db.Numeric(10, 2), nullable=False)
+    is_active = db.Column(db.Boolean(), default=True)
     details = db.relationship('PurchaseDetail', backref='purchase', lazy=True)
 
 class PurchaseDetail(db.Model):
