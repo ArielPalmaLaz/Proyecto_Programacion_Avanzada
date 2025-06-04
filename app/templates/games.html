@@ -22,11 +22,7 @@
         <div class="card-body">
           <h5 class="card-title">{{ game.title }}</h5>
           <p class="card-text">{{ game.description }}</p>
-          <p class="genre-list"><strong>Genre:</strong>
-            {% for g in genre %}
-              {{ g.name }}{% if not loop.last %}, {% endif %}
-            {% endfor %}
-          </p>
+          <p class="genre-list"><strong>Genre: </strong>{{game.genre.name}}</p>
           <p><strong>Developer</strong> {{ game.developer }} </p>
           <p><strong>Price:</strong> ${{ game.price }}</p>
         </div>

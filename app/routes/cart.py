@@ -78,7 +78,7 @@ def checkout():
     active_purchase = Purchase.query.filter_by(user_id=current_user.id, is_active=True).first()
     
     if not active_purchase or not active_purchase.details:
-        flash("Your cart is empty.", "warning")
+        flash("Tu carro esta vacio", "warning")
         return redirect(url_for('cart.view_cart'))
 
     # Calcular el total
@@ -89,7 +89,7 @@ def checkout():
     active_purchase.is_active = False
     db.session.commit()
 
-    flash("Purchase completed successfully! 🎉", "success")
+    flash("Compra realizada exitosamente", "success")
     return redirect(url_for('main.games'))  # o a una vista de historial de compras
 
 @cart.route('/remove_from_cart/<int:detail_id>')
@@ -104,5 +104,5 @@ def remove_from_cart(detail_id):
 
     db.session.delete(detail)
     db.session.commit()
-    flash(f"Removed {detail.game.title} from cart.", "success") 
+    flash(f"El juego {detail.game.title} Ha sido removido del carrito", "success") 
     return redirect(url_for('cart.view_cart'))
