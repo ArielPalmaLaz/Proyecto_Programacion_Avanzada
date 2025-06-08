@@ -1,0 +1,6 @@
+PASOS PARA EJECUTAR EL PROYECTO 
+1.- Crear una base de datos en postgreSQL llamada "videogamesStorage"
+2.- Crear un entorno virtual con los requirements.txt 
+3.- Con el comando <python init_db.py> inicializar la base de datos
+4.- Con el comando <python seed.py> insertar los datos de prueba del proyecto (Sino no se apreciara nada en la vista de /games)
+5.- Iniciar el proyecto con <python run.py>
